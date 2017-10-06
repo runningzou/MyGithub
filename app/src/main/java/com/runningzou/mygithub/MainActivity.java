@@ -1,5 +1,6 @@
 package com.runningzou.mygithub;
 
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
         //启动优化参考 http://yifeng.studio/2016/11/15/android-optimize-for-cold-start/
         setTheme(R.style.AppTheme);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(getResources().getColor(android.R.color.transparent));
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
         setContentView(R.layout.activity_main);
         getSupportFragmentManager().beginTransaction()

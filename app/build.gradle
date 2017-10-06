@@ -10,7 +10,7 @@ android {
         }
     }
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.runningzou.mygithub"
         minSdkVersion 14
@@ -53,4 +53,6 @@ dependencies {
     compile 'com.android.support:design:26.1.0'
 
     compile 'com.roughike:bottom-bar:2.3.1'
+
+    provided "org.projectlombok:lombok:1.16.18"
 }

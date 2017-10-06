@@ -18,7 +18,6 @@ import dagger.android.HasActivityInjector;
 
 public class GitHubApp extends Application implements HasActivityInjector {
 
-    public static boolean ShowSplash = true;
 
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
