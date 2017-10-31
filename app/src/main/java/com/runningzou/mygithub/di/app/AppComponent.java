@@ -8,7 +8,6 @@ import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
-import dagger.android.AndroidInjectionModule;
 
 /**
  * Created by runningzou on 2017/9/17.
@@ -17,7 +16,7 @@ import dagger.android.AndroidInjectionModule;
 @Singleton
 @Component(
         modules = {
-                AndroidInjectionModule.class,
+
                 AppModule.class,
                 ActivityAndroidInjectorBuilder.class
         }

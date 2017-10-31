@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">MyGitHub</string>
+    <string name="navigation_drawer_open">open_drawer</string>
+    <string name="navigation_drawer_close">close_drawer</string>
+    <string name="login">登录</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="feed">feed</string>
+    <string name="trend">trend</string>
+    <string name="issue">issue</string>
+    <string name="pull_request">pull_request</string>
+    <string name="error">错误</string>
+    <string name="reload">重新加载</string>
+    <string name="net_error">网络错误</string>
+
+    <string-array name="language">
+        <item>all</item>
+        <item>c</item>
+        <item>c++</item>
+        <item>java</item>
+        <item>python</item>
+        <item>shell</item>
+        <item>javascript</item>
+        <item>objective-c</item>
+        <item>php</item>
+    </string-array>
+
+
+    <string-array name="time">
+        <item>today</item>
+        <item>this week</item>
+        <item>this month</item>
+    </string-array>
+
+
+
 </resources>

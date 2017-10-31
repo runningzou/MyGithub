@@ -95,6 +95,7 @@ public class RxCommand<T> {
                 })
                 .observeOn(AndroidSchedulers.mainThread());
 
+        //switchOnNext,用来将一个发射多个小Observable的源Observable转化为一个Observable，然后发射这多个小Observable所发射的数据。
         mLatestObservable = Observable
                 .switchOnNext(mExecutionObservables)
                 .publish()

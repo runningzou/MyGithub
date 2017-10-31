@@ -3,7 +3,9 @@ package com.runningzou.mygithub.di.app;
 import android.app.Activity;
 
 import com.runningzou.mygithub.MainActivity;
+import com.runningzou.mygithub.di.login.LoginActivityComponent;
 import com.runningzou.mygithub.di.mainActivity.MainActivityComponent;
+import com.runningzou.mygithub.login.LoginActivity;
 
 import dagger.Binds;
 import dagger.Module;
@@ -22,5 +24,10 @@ public abstract class ActivityAndroidInjectorBuilder {
     @IntoMap
     @ActivityKey(MainActivity.class)
     abstract AndroidInjector.Factory<? extends Activity> bindMainActivity(MainActivityComponent.Builder builder);
+
+    @Binds
+    @IntoMap
+    @ActivityKey(LoginActivity.class)
+    abstract AndroidInjector.Factory<? extends Activity> bindLoginActivity(LoginActivityComponent.Builder builder);
 
 }

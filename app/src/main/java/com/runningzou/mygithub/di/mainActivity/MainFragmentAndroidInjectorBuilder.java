@@ -2,8 +2,11 @@ package com.runningzou.mygithub.di.mainActivity;
 
 import android.support.v4.app.Fragment;
 
-import com.runningzou.mygithub.MainFragment;
-import com.runningzou.mygithub.di.mainActivity.mainFragment.MainFragmentComponent;
+import com.runningzou.mygithub.di.trendingFragment.TrendingFragmentComponent;
+import com.runningzou.mygithub.feedFragment.FeedFragment;
+import com.runningzou.mygithub.di.feedFragment.FeedFragmentComponent;
+import com.runningzou.mygithub.trendingFragment.TrendingFragment;
+
 
 import dagger.Binds;
 import dagger.Module;
@@ -19,6 +22,11 @@ public abstract class MainFragmentAndroidInjectorBuilder {
 
     @Binds
     @IntoMap
-    @dagger.android.support.FragmentKey(MainFragment.class)
-    abstract AndroidInjector.Factory<? extends Fragment> bindMainFragment(MainFragmentComponent.Builder builder);
+    @dagger.android.support.FragmentKey(FeedFragment.class)
+    abstract AndroidInjector.Factory<? extends Fragment> bindMainFragment(FeedFragmentComponent.Builder builder);
+
+    @Binds
+    @IntoMap
+    @dagger.android.support.FragmentKey(TrendingFragment.class)
+    abstract AndroidInjector.Factory<? extends Fragment> bindTrendingFragment(TrendingFragmentComponent.Builder builder);
 }

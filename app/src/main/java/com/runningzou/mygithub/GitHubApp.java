@@ -5,6 +5,7 @@ import android.app.Application;
 import android.support.v7.app.AppCompatDelegate;
 
 import com.runningzou.mygithub.di.app.AppInjector;
+import com.runningzou.mygithub.model.AccessToken;
 
 import javax.inject.Inject;
 
@@ -18,11 +19,13 @@ import dagger.android.HasActivityInjector;
 
 public class GitHubApp extends Application implements HasActivityInjector {
 
+    public static AccessToken mAccessToken = new AccessToken();
 
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }
 
+    private static GitHubApp sGitHubApp;
 
     @Inject
     DispatchingAndroidInjector<Activity> mDispatchingAndroidInjector;
@@ -31,11 +34,15 @@ public class GitHubApp extends Application implements HasActivityInjector {
     public void onCreate() {
         super.onCreate();
         AppInjector.init(this);
-
+        sGitHubApp = this;
     }
 
     @Override
     public AndroidInjector<Activity> activityInjector() {
         return mDispatchingAndroidInjector;
+    }
+
+    public static GitHubApp getApp() {
+        return sGitHubApp;
     }
 }

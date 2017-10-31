@@ -8,10 +8,10 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 
 import com.runningzou.mygithub.GitHubApp;
+import com.runningzou.mygithub.di.Injector;
 
 import dagger.android.AndroidInjection;
 import dagger.android.support.AndroidSupportInjection;
-import dagger.android.support.HasSupportFragmentInjector;
 
 /**
  * Created by runningzou on 2017/9/17.
@@ -67,20 +67,22 @@ public class AppInjector {
 
     private static void handleActivity(Activity activity) {
 
-        if (activity instanceof HasSupportFragmentInjector) {
+        if (activity instanceof Injector) {
             AndroidInjection.inject(activity);
-
-            if (activity instanceof FragmentActivity) {
-                ((FragmentActivity) activity).getSupportFragmentManager()
-                        .registerFragmentLifecycleCallbacks(new FragmentManager.FragmentLifecycleCallbacks() {
-                            @Override
-                            public void onFragmentCreated(FragmentManager fm, Fragment f, Bundle savedInstanceState) {
-                                super.onFragmentCreated(fm, f, savedInstanceState);
-                                AndroidSupportInjection.inject(f);
-                            }
-                        }, true);
-            }
         }
 
+
+        if (activity instanceof FragmentActivity) {
+            ((FragmentActivity) activity).getSupportFragmentManager()
+                    .registerFragmentLifecycleCallbacks(new FragmentManager.FragmentLifecycleCallbacks() {
+                        @Override
+                        public void onFragmentCreated(FragmentManager fm, Fragment f, Bundle savedInstanceState) {
+                            super.onFragmentCreated(fm, f, savedInstanceState);
+                            if (f instanceof Injector)
+                                AndroidSupportInjection.inject(f);
+                        }
+                    }, true);
+        }
     }
+
 }

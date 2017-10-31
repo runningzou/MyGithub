@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <tab
+        id="@+id/tab_feed"
+        icon="@drawable/ic_feed"
+        title="feed" />
+    <tab
+        id="@+id/tab_trend"
+        icon="@drawable/ic_trending"
+        title="trending" />
+    <tab
+        id="@+id/tab_issue"
+        icon="@drawable/ic_issue"
+        title="issue" />
+    <tab
+        id="@+id/tab_pull_request"
+        icon="@drawable/ic_pull_requests"
+        title="pull request" />
+</tabs>
